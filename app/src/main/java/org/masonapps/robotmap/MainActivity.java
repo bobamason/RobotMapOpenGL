@@ -1,34 +1,17 @@
 package org.masonapps.robotmap;
 
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
-import org.masonapps.robotmap.bluetooth.BluetoothActivity;
 
-public class MainActivity extends BluetoothActivity {
+public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-    }
-
-    @Override
-    public void connected() {
-        
-    }
-
-    @Override
-    public void connecting() {
-
-    }
-
-    @Override
-    public void disconnected() {
-
-    }
-
-    @Override
-    public void onRead(String line) {
-
+        if (savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction().add(R.id.container, new MapFragment()).commit();
+        }
     }
 }
