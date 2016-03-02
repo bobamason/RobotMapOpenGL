@@ -23,6 +23,7 @@ public abstract class Base3DFragment extends Fragment {
     private FrameLayout layout;
     private TextureView textureView;
     private ProgressBar progressBar;
+    private BaseRenderer renderer;
 
     public Base3DFragment() {
         // Required empty public constructor
@@ -36,7 +37,8 @@ public abstract class Base3DFragment extends Fragment {
         textureView = (TextureView) layout.findViewById(R.id.textureView);
         progressBar = (ProgressBar) layout.findViewById(R.id.progressBar);
         onBeforeApplyRenderer();
-        textureView.setSurfaceRenderer(createRenderer(getActivity()));
+        renderer = (BaseRenderer) createRenderer(getActivity());
+        textureView.setSurfaceRenderer(renderer);
         return layout;
     }
 
