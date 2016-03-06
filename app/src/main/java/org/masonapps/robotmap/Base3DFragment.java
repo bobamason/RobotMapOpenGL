@@ -3,13 +3,13 @@ package org.masonapps.robotmap;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ProgressBar;
 
+import org.masonapps.robotmap.bluetooth.BluetoothFragment;
 import org.rajawali3d.renderer.ISurfaceRenderer;
 import org.rajawali3d.renderer.Renderer;
 import org.rajawali3d.view.TextureView;
@@ -18,7 +18,7 @@ import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 
 
-public abstract class Base3DFragment extends Fragment {
+public abstract class Base3DFragment extends BluetoothFragment {
 
     private FrameLayout layout;
     private TextureView textureView;
